@@ -1,0 +1,27 @@
+# 개발서버 배포 환경설정
+# 파일명 : application-dev.yml
+# 설명 : 개발서버 배포시 환경설정 적용
+
+server:
+  port: 80
+
+spring:
+  thymeleaf:
+    prefix: classpath:templates/thymeleaf/
+    suffix: .html
+    check-template-location: true
+    mode: HTML
+    cache: false
+
+  mvc:
+    static-path-pattern: /static/**
+
+  datasource:
+    hikari:
+      max-lifetime: 100000
+      maximum-pool-size: 10
+
+    postgresql:
+      jdbc-url: jdbc:postgresql://localhost:5432/postgres
+      username: postgres
+      pasword: root

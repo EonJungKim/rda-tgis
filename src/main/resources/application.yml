@@ -1,0 +1,32 @@
+# Local 개발 환경설정
+# 파일명 : application-local.yml
+# 설명 : 개발자 Local PC 개발환경에서의 환경설정 적용
+
+server:
+  port: 8099
+
+spring:
+  thymeleaf:
+    prefix: classpath:templates/thymeleaf/
+    suffix: .html
+    check-template-location: true
+    mode: HTML
+    cache: false
+
+  mvc:
+    static-path-pattern: /static/**
+
+  datasource:
+    hikari:
+      max-lifetime: 100000
+      maximum-pool-size: 10
+
+    postgresql:
+      jdbc-url: jdbc:postgresql://localhost:5432/postgres
+      username: postgres
+      pasword: root
+
+#    Cubrid
+
+#     MongoDB
+
